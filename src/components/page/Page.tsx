@@ -1,7 +1,15 @@
-export default function Page(props) {
+import React, { FunctionComponent } from "react";
+
+type PageType = {
+  className?: string
+}
+
+const Page: FunctionComponent<PageType> = (props) => {
   return (
-    <section className="flex flex-col">
+    <section className={"flex flex-col " + props.className}>
       {props.children}
     </section>
   );
 }
+
+export default Page;

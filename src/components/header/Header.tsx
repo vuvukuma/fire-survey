@@ -1,4 +1,6 @@
-function Header() {
+import React, { FunctionComponent } from 'react';
+
+const Header: FunctionComponent = () => {
   return (
     <header className="App-header">
       <nav>
