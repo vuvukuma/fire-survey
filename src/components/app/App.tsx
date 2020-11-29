@@ -3,7 +3,7 @@ import Page from '../page/Page';
 
 function App() {
   return (
-    <article class="container mx-auto">
+    <article className="container mx-auto">
       <Header></Header>
       <Page className="title">
         <h1>When can I retire 🔥</h1>

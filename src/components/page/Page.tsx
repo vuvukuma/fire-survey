@@ -1,6 +1,6 @@
 export default function Page(props) {
   return (
-    <section class="flex flex-col">
+    <section className="flex flex-col">
       {props.children}
     </section>
   );
