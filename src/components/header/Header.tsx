@@ -1,11 +1,24 @@
 import React, { FunctionComponent } from 'react';
+import { useHistory } from 'react-router-dom';
+import ProgressBar from '../progressBar/ProgressBar';
 
-const Header: FunctionComponent = () => {
+type HeaderType = {
+  now: number
+}
+
+const Header: FunctionComponent<HeaderType> = (props) => {
+  let history = useHistory();
+  
+  function handleClick() {  
+    history.goBack();
+  }
+
   return (
-    <header className="App-header">
+    <header>
       <nav>
-        <button>Back</button>
+        <button onClick={handleClick}>Back</button>
       </nav>
+      <ProgressBar {...props}></ProgressBar>
     </header>
   );
 };

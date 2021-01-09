@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent } from 'react';
 
 type PageType = {
   className?: string
@@ -6,7 +6,7 @@ type PageType = {
 
 const Page: FunctionComponent<PageType> = (props) => {
   return (
-    <section className={"flex flex-col " + props.className}>
+    <section className={"flex flex-col h-full w-full " + (props.className || "") }>
       {props.children}
     </section>
   );
