@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const IntroPage: FunctionComponent = () => {
   return (
-    <Page className="flex flex-col justify-center">
+    <Page className="justify-center">
       <h1 className="text-center text-3xl font-bold">When can I retire 🔥</h1>
       <Link to="/1">
         <Button>Let's check this out ⏱</Button>

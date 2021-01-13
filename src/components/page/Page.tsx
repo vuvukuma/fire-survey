@@ -6,7 +6,7 @@ type PageType = {
 
 const Page: FunctionComponent<PageType> = (props) => {
   return (
-    <section className={"flex flex-col h-full w-full " + (props.className || "") }>
+    <section className={"flex flex-col h-full w-80 " + (props.className || "") }>
       {props.children}
     </section>
   );

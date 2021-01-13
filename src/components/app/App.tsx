@@ -85,30 +85,27 @@ function App() {
   }
   
   return (
-    <article className="container flex flex-col mx-auto p-4 h-screen">
-      { location.pathname !== '/' ? <Header now={progress}/> : null }
-      <TransitionGroup className="h-full">
-        <CSSTransition
-          key={location.key}
-          classNames="page"
-          timeout={300}
-        >
-          <Switch location={location}>
-            {questionPages}
-            <Route path="/result" children={
-              <ResultPage
-                fireDate={fireDate}
-                fireNumber={fireNumber}
-                updateResult={updateResult} />
-            }/>
-            <Route path="/">
-              <IntroPage/>
-            </Route>
-          </Switch>
-        </CSSTransition>
-      </TransitionGroup>
+    <div className="container flex flex-col items-center h-screen max-h-640 mx-auto">
+      <article className="h-full md:max-w-1/4">
+        {location.pathname !== '/' 
+          ? <Header now={progress} /> 
+          : null 
+        }
+        <Switch location={location}>
+          {questionPages}
+          <Route path="/result" children={
+            <ResultPage
+              fireDate={fireDate}
+              fireNumber={fireNumber}
+              updateResult={updateResult} />
+          }/>
+          <Route path="/">
+            <IntroPage/>
+          </Route>
+        </Switch>
+      </article>
       <Footer/>
-    </article>
+    </div>
   );
 }
 

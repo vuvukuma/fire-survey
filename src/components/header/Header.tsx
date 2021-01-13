@@ -14,7 +14,7 @@ const Header: FunctionComponent<HeaderType> = (props) => {
   }
 
   return (
-    <header>
+    <header className="pt-4">
       <nav>
         <button onClick={handleClick}>Back</button>
       </nav>

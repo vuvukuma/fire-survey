@@ -7,7 +7,11 @@ module.exports = {
     fontFamily: {
       sans: ['IBM Plex Sans', ...defaultTheme.fontFamily.sans]
     },
-    extend: {},
+    extend: {
+      maxHeight: {
+        '640': '640px'
+      }
+    },
   },
   variants: {
     extend: {},

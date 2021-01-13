@@ -13,7 +13,7 @@ export type QuestionPageType = {
 
 const QuestionPage: FunctionComponent<QuestionPageType> = (props) => {
     return (
-        <Page className="py-10 px-4">
+        <Page>
             <div className="flex flex-row justify-between py-6">
                 <h2 className="text-lg">Q{props.step}.</h2>
                 <span className="text-gray-400">{props.step}/{props.totalSteps}</span>
