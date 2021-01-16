@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { TransitionGroup, CSSTransition } from 'react-transition-group'
 import {
   Switch,
   Route,
   useLocation,
 } from 'react-router-dom';
-import Header from '../header/Header';
 import IntroPage from '../introPage/IntroPage';
 import QuestionPage, { QuestionPageType } from '../questionPage/QuestionPage';
 import ResultPage from '../resultPage/ResultPage';
@@ -18,7 +16,6 @@ function App() {
   const [pfValue, setPfValue] = useState(0);
   const [fireNumber, setFireNumber] = useState(0);
   const [fireDate, setFireDate] = useState(new Date().toLocaleString());
-  const [progress, setProgress] = useState(0);
   const questions: Array<QuestionPageType> = [
     {
       step: 1,
@@ -73,24 +70,23 @@ function App() {
   }
 
   function handleChangeIncome(e: React.FormEvent<HTMLInputElement>): void {
-    setIncome(parseInt(e.currentTarget.value, 10));
+    const next = parseInt(e.currentTarget.value, 10);
+    setIncome(next >= 0 ? next : 0);
   }
 
   function handleChangeExpense(e: React.FormEvent<HTMLInputElement>): void {
-    setExpense(parseInt(e.currentTarget.value, 10));
+    const next = parseInt(e.currentTarget.value, 10);
+    setExpense(next >= 0 ? next : 0);
   }
 
   function handleChangePfValue(e: React.FormEvent<HTMLInputElement>): void {
-    setPfValue(parseInt(e.currentTarget.value, 10))
+    const next = parseInt(e.currentTarget.value, 10);
+    setPfValue(next >= 0 ? next : 0);
   }
   
   return (
     <div className="container flex flex-col items-center h-screen max-h-640 mx-auto">
       <article className="h-full md:max-w-1/4">
-        {location.pathname !== '/' 
-          ? <Header now={progress} /> 
-          : null 
-        }
         <Switch location={location}>
           {questionPages}
           <Route path="/result" children={

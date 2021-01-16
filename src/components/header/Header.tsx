@@ -3,7 +3,8 @@ import { useHistory } from 'react-router-dom';
 import ProgressBar from '../progressBar/ProgressBar';
 
 type HeaderType = {
-  now: number
+  step: number,
+  totalSteps: number
 }
 
 const Header: FunctionComponent<HeaderType> = (props) => {
@@ -14,11 +15,11 @@ const Header: FunctionComponent<HeaderType> = (props) => {
   }
 
   return (
-    <header className="pt-4">
+    <header className="pt-8">
       <nav>
-        <button onClick={handleClick}>Back</button>
+        <button onClick={handleClick}>{`< Back`}</button>
+        <ProgressBar {...props}></ProgressBar>
       </nav>
-      <ProgressBar {...props}></ProgressBar>
     </header>
   );
 };
