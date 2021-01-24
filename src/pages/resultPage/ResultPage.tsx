@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect } from 'react';
 import Page from '../page/Page';
-import Button from '../button/Button';
+import Button from '../../components/button/Button';
 import { useLocation } from 'react-router';
 
 type ResultPageType = {
@@ -53,7 +53,7 @@ const ResultPage: FunctionComponent<ResultPageType> = (props) => {
       </div>
       <div>
         <Button className="mb-4">Share the result 🤑</Button>
-        <Button>Recommend it to friends 🙈</Button>
+        <Button textColor="white" bgColor="purple-600">Recommend it to friends 🙈</Button>
       </div>
     </Page>
   );

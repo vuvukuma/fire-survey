@@ -4,16 +4,16 @@ import {
   Route,
   useLocation,
 } from 'react-router-dom';
-import IntroPage from '../introPage/IntroPage';
-import QuestionPage, { QuestionPageType } from '../questionPage/QuestionPage';
-import ResultPage from '../resultPage/ResultPage';
+import IntroPage from '../../pages/introPage/IntroPage';
+import QuestionPage, { QuestionPageType } from '../../pages/questionPage/QuestionPage';
+import ResultPage from '../../pages/resultPage/ResultPage';
 import Footer from '../footer/Footer';
 import "./App.css";
 
 function App() {
-  const [income, setIncome] = useState(0);
-  const [expense, setExpense] = useState(0);
-  const [pfValue, setPfValue] = useState(0);
+  const [income, setIncome] = useState(10000);
+  const [expense, setExpense] = useState(1000);
+  const [pfValue, setPfValue] = useState(100000);
   const [fireNumber, setFireNumber] = useState(0);
   const [fireDate, setFireDate] = useState(new Date().toLocaleString());
   const questions: Array<QuestionPageType> = [
@@ -56,7 +56,9 @@ function App() {
   function getFireDate(): string {
     const fireNumber: number = getFireNumber();
     const difference: number = fireNumber - pfValue;
-    const remainingMonths: number = Math.round(difference / (income - expense));
+    const saving: number = income - expense;
+    const savingRate: number = saving / income;
+    const remainingMonths: number = Math.round(difference / (income * savingRate));
     const today: Date = new Date();
 
     today.setMonth(today.getMonth() + remainingMonths);
