@@ -14,7 +14,7 @@ const ProgressBar: FunctionComponent<ProgressBarType> = (props) => {
 
     useEffect(() => {
         setProgress(getProgressByStep(props.step, props.totalSteps));
-    })
+    }, [props.step, props.totalSteps])
 
     return (
         <div className="relative pt-4">

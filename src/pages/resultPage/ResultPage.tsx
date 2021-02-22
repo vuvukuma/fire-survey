@@ -29,7 +29,7 @@ const ResultPage: FunctionComponent<ResultPageType> = (props) => {
             Your FIRE number 💰
           </h2>
           <div className="text-2xl">
-            $ {props.fireNumber}
+            $ {props.fireNumber.toLocaleString()}
           </div>
         </div>
         <div className="mb-8">
