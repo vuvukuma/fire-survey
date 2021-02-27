@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Switch, Route, useLocation } from 'react-router-dom'
-import { IntlProvider } from 'react-intl'
+import { useIntl } from 'react-intl'
 
 import IntroPage from '../../pages/introPage/IntroPage'
 import QuestionPage, {
@@ -9,14 +9,9 @@ import QuestionPage, {
 import ResultPage from '../../pages/resultPage/ResultPage'
 import Footer from '../footer/Footer'
 import './App.css'
-import { getMessages } from '../../i18n'
-
-const browserLocale = navigator.language.slice(0, 2)
-const messages = getMessages(browserLocale)
 
 const App = () => {
-    const [locale] = React.useState(browserLocale)
-
+    const intl = useIntl()
     const [income, setIncome] = useState(10000)
     const [expense, setExpense] = useState(1000)
     const [pfValue, setPfValue] = useState(100000)
@@ -26,21 +21,30 @@ const App = () => {
         {
             step: 1,
             totalSteps: 3,
-            question: 'Your monthly income (after tax)',
+            question: intl.formatMessage({
+                description: 'Q1. monthly income question',
+                defaultMessage: 'Your monthly income (after tax)',
+            }),
             inputValue: income,
             handleChange: handleChangeIncome,
         },
         {
             step: 2,
             totalSteps: 3,
-            question: 'Your monthly expense',
+            question: intl.formatMessage({
+                description: 'Q2. monthly expenses',
+                defaultMessage: 'Your monthly expenses',
+            }),
             inputValue: expense,
             handleChange: handleChangeExpense,
         },
         {
             step: 3,
             totalSteps: 3,
-            question: 'Your current portfolio value',
+            question: intl.formatMessage({
+                description: 'Q3. portfolio value',
+                defaultMessage: 'Your current portfolio value',
+            }),
             inputValue: pfValue,
             handleChange: handleChangePfValue,
         },
@@ -95,29 +99,27 @@ const App = () => {
     }
 
     return (
-        <IntlProvider locale={locale} messages={messages}>
-            <div className="container flex flex-col items-center h-screen max-h-640 mx-auto">
-                <article className="h-full md:max-w-1/4">
-                    <Switch location={location}>
-                        {questionPages}
-                        <Route
-                            path="/result"
-                            children={
-                                <ResultPage
-                                    fireDate={fireDate}
-                                    fireNumber={fireNumber}
-                                    updateResult={updateResult}
-                                />
-                            }
-                        />
-                        <Route path="/">
-                            <IntroPage />
-                        </Route>
-                    </Switch>
-                </article>
-                <Footer />
-            </div>
-        </IntlProvider>
+        <div className="container flex flex-col items-center h-screen max-h-640 mx-auto">
+            <article className="h-full md:max-w-1/4">
+                <Switch location={location}>
+                    {questionPages}
+                    <Route
+                        path="/result"
+                        children={
+                            <ResultPage
+                                fireDate={fireDate}
+                                fireNumber={fireNumber}
+                                updateResult={updateResult}
+                            />
+                        }
+                    />
+                    <Route path="/">
+                        <IntroPage />
+                    </Route>
+                </Switch>
+            </article>
+            <Footer />
+        </div>
     )
 }
 

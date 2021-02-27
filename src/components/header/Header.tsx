@@ -1,27 +1,34 @@
-import React, { FunctionComponent } from 'react';
-import { useHistory } from 'react-router-dom';
-import ProgressBar from '../progressBar/ProgressBar';
+import React, { FunctionComponent } from 'react'
+import { useHistory } from 'react-router-dom'
+import { FormattedMessage } from 'react-intl'
+
+import ProgressBar from '../progressBar/ProgressBar'
 
 type HeaderType = {
-  step: number,
-  totalSteps: number
+    step: number
+    totalSteps: number
 }
 
 const Header: FunctionComponent<HeaderType> = (props) => {
-  let history = useHistory();
-  
-  function handleClick() {  
-    history.goBack();
-  }
+    let history = useHistory()
 
-  return (
-    <header className="pt-8">
-      <nav>
-        <button onClick={handleClick}>{`< Back`}</button>
-        <ProgressBar {...props}></ProgressBar>
-      </nav>
-    </header>
-  );
-};
+    function handleClick() {
+        history.goBack()
+    }
 
-export default Header;
+    return (
+        <header className="pt-8">
+            <nav>
+                <button onClick={handleClick}>
+                    <FormattedMessage
+                        defaultMessage="< Back"
+                        description="Back button on the header"
+                    ></FormattedMessage>
+                </button>
+                <ProgressBar {...props}></ProgressBar>
+            </nav>
+        </header>
+    )
+}
+
+export default Header

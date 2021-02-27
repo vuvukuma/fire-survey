@@ -1,7 +1,39 @@
 {
+  "3Wcqsy": {
+    "defaultMessage": "Next",
+    "description": "Next button"
+  },
+  "71zIXx": {
+    "defaultMessage": "You can retire in ⏱",
+    "description": "Result page heading FIRE time"
+  },
+  "9JVqHH": {
+    "defaultMessage": "by boosting savings rate 💸",
+    "description": ""
+  },
+  "CUpp/h": {
+    "defaultMessage": "Share the result 🤑",
+    "description": "Share the result"
+  },
   "GOC0jN": {
     "defaultMessage": "When can I retire? 🔥",
     "description": "Intro page title"
+  },
+  "GxGjB2": {
+    "defaultMessage": "Your monthly expenses",
+    "description": "Q2. monthly expenses"
+  },
+  "IF0/1v": {
+    "defaultMessage": "Your monthly income (after tax)",
+    "description": "Q1. monthly income question"
+  },
+  "KJJat7": {
+    "defaultMessage": "< Back",
+    "description": "Back button on the header"
+  },
+  "S4qD6l": {
+    "defaultMessage": "Your current portfolio value",
+    "description": "Q3. portfolio value"
   },
   "XgjwD2": {
     "defaultMessage": "Financial Freedom",
@@ -10,5 +42,17 @@
   "eHDuqN": {
     "defaultMessage": "Let's check this out ⏱",
     "description": "Intro page start button text"
+  },
+  "iXEv8P": {
+    "defaultMessage": "Recommend it to friends 🙈",
+    "description": "Share this page"
+  },
+  "mCa6Fa": {
+    "defaultMessage": "Speed up your FIRE",
+    "description": ""
+  },
+  "vKyplr": {
+    "defaultMessage": "Your FIRE number 💰",
+    "description": "Result page heading FIRE number"
   }
 }

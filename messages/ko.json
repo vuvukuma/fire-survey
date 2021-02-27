@@ -1,14 +1,58 @@
 {
+  "3Wcqsy": {
+    "defaultMessage": "다음",
+    "description": "Next button"
+  },
+  "71zIXx": {
+    "defaultMessage": "당신의 예상 퇴사일은 ⏱",
+    "description": "Result page heading FIRE time"
+  },
+  "9JVqHH": {
+    "defaultMessage": "매월 저축 비율을 늘려보세요 💸",
+    "description": ""
+  },
+  "CUpp/h": {
+    "defaultMessage": "테스트 결과 공유하기 🤑",
+    "description": "Share the result"
+  },
   "GOC0jN": {
-    "defaultMessage": "언제 은퇴할 수 있을까? 🔥",
+    "defaultMessage": "언제 퇴사하지? 🔥",
     "description": "Intro page title"
+  },
+  "GxGjB2": {
+    "defaultMessage": "당신의 한 달 생활비는?",
+    "description": "Q2. monthly expenses"
+  },
+  "IF0/1v": {
+    "defaultMessage": "당신의 한 달 수입은? (세금 제외)",
+    "description": "Q1. monthly income question"
+  },
+  "KJJat7": {
+    "defaultMessage": "< 이전",
+    "description": "Back button on the header"
+  },
+  "S4qD6l": {
+    "defaultMessage": "현재까지 투자하거나 저금한 돈이 있다면?",
+    "description": "Q3. portfolio value"
   },
   "XgjwD2": {
     "defaultMessage": "경제적 자유",
     "description": "hero image alt text on the intro page"
   },
   "eHDuqN": {
-    "defaultMessage": "지금 테스트 해보기 ⏱",
+    "defaultMessage": "은퇴 시기 계산하기 ⏱",
     "description": "Intro page start button text"
+  },
+  "iXEv8P": {
+    "defaultMessage": "친구에게 테스트 보내기 🙈",
+    "description": "Share this page"
+  },
+  "mCa6Fa": {
+    "defaultMessage": "더 빠른 은퇴를 원하신다면,",
+    "description": ""
+  },
+  "vKyplr": {
+    "defaultMessage": "당신이 모아야 할 돈은 💰",
+    "description": "Result page heading FIRE number"
   }
 }

@@ -1,15 +1,23 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
+import { IntlProvider } from 'react-intl'
+import { getMessages } from './i18n'
+
 import './tailwind.output.css'
 import App from './components/app/App'
 import reportWebVitals from './reportWebVitals'
 
+const browserLocale = navigator.language.slice(0, 2)
+const messages = getMessages(browserLocale)
+
 ReactDOM.render(
     <React.StrictMode>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
+        <IntlProvider locale={browserLocale} messages={messages}>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </IntlProvider>
     </React.StrictMode>,
     document.getElementById('root')
 )
