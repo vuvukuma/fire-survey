@@ -3,21 +3,24 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
 import { IntlProvider } from 'react-intl'
 import { getMessages } from './i18n'
+import reportWebVitals from './reportWebVitals'
 
 import './tailwind.output.css'
 import App from './components/app/App'
-import reportWebVitals from './reportWebVitals'
+import { ModalProvider } from './layout/modal/ModalProvider'
 
 const browserLocale = navigator.language.slice(0, 2)
 const messages = getMessages(browserLocale)
 
 ReactDOM.render(
     <React.StrictMode>
-        <IntlProvider locale={browserLocale} messages={messages}>
-            <BrowserRouter>
-                <App />
-            </BrowserRouter>
-        </IntlProvider>
+        <ModalProvider>
+            <IntlProvider locale={browserLocale} messages={messages}>
+                <BrowserRouter>
+                    <App />
+                </BrowserRouter>
+            </IntlProvider>
+        </ModalProvider>
     </React.StrictMode>,
     document.getElementById('root')
 )

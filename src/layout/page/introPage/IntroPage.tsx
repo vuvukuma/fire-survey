@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from 'react'
 import { useIntl, FormattedMessage } from 'react-intl'
-
-import Page from '../page/Page'
-import Button from '../../components/button/Button'
 import { Link } from 'react-router-dom'
-import HeroImage from '../../assets/images/big-shoes.png'
+
+import Page from '../Page'
+import Button from '../../../components/button/Button'
+import HeroImage from '../../../assets/images/big-shoes.png'
 
 const IntroPage: FunctionComponent = () => {
     const intl = useIntl()

@@ -2,10 +2,10 @@ import React, { FunctionComponent } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { FormattedMessage } from 'react-intl'
 
-import Page from '../page/Page'
-import Button from '../../components/button/Button'
-import Header from '../../components/header/Header'
-import CurrencyInput from '../../components/inputs/CurrencyInput'
+import Page from '../Page'
+import Button from '../../../components/button/Button'
+import Header from '../../../components/header/Header'
+import CurrencyInput from '../../../components/inputs/CurrencyInput'
 
 export type QuestionPageType = {
     step: number

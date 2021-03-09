@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import { Switch, Route, useLocation } from 'react-router-dom'
 import { useIntl } from 'react-intl'
 
-import IntroPage from '../../pages/introPage/IntroPage'
+import IntroPage from '../../layout/page/introPage/IntroPage'
 import QuestionPage, {
     QuestionPageType,
-} from '../../pages/questionPage/QuestionPage'
-import ResultPage from '../../pages/resultPage/ResultPage'
+} from '../../layout/page/questionPage/QuestionPage'
+import ResultPage from '../../layout/page/resultPage/ResultPage'
 import Footer from '../footer/Footer'
+
 import './App.css'
 
 const App = () => {

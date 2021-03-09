@@ -2,8 +2,8 @@ import React, { FunctionComponent, useEffect } from 'react'
 import { useLocation } from 'react-router'
 import { FormattedMessage } from 'react-intl'
 
-import Page from '../page/Page'
-import Button from '../../components/button/Button'
+import Page from '../Page'
+import Button from '../../../components/button/Button'
 
 type ResultPageType = {
     fireNumber: number
@@ -17,7 +17,7 @@ function usePageViews(cb: () => void) {
     useEffect(cb, [location])
 }
 
-const ResultPage: FunctionComponent<ResultPageType> = (props) => {
+const SharedResultPage: FunctionComponent<ResultPageType> = (props) => {
     usePageViews(props.updateResult)
 
     return (
@@ -44,32 +44,11 @@ const ResultPage: FunctionComponent<ResultPageType> = (props) => {
                     <div className="text-2xl">{props.fireDate}</div>
                 </div>
             </div>
-            <div className="w-full">
-                <div>
-                    <FormattedMessage
-                        defaultMessage="Speed up your FIRE"
-                        description=""
-                    ></FormattedMessage>
-                    <br />
-                    <FormattedMessage
-                        defaultMessage="by boosting savings rate 💸"
-                        description=""
-                    ></FormattedMessage>
-                </div>
-                <div className="py-8">
-                    <input className="w-full" type="range"></input>
-                </div>
-            </div>
+            <hr></hr>
             <div>
-                <Button className="mb-4">
-                    <FormattedMessage
-                        defaultMessage="Share the result 🤑"
-                        description="Share the result"
-                    ></FormattedMessage>
-                </Button>
                 <Button textColor="white" bgColor="purple-600">
                     <FormattedMessage
-                        defaultMessage="Recommend it to friends 🙈"
+                        defaultMessage="Try this test 🙈"
                         description="Share this page"
                     ></FormattedMessage>
                 </Button>
@@ -78,4 +57,4 @@ const ResultPage: FunctionComponent<ResultPageType> = (props) => {
     )
 }
 
-export default ResultPage
+export default SharedResultPage

@@ -1,4 +1,8 @@
 {
+  "24Xwvp": {
+    "defaultMessage": "Share the Test",
+    "description": "sharing test modal text"
+  },
   "3Wcqsy": {
     "defaultMessage": "Next",
     "description": "Next button"
@@ -43,6 +47,10 @@
     "defaultMessage": "Let's check this out ⏱",
     "description": "Intro page start button text"
   },
+  "fTbIbq": {
+    "defaultMessage": "Close",
+    "description": "modal closing button"
+  },
   "iXEv8P": {
     "defaultMessage": "Recommend it to friends 🙈",
     "description": "Share this page"
@@ -50,6 +58,14 @@
   "mCa6Fa": {
     "defaultMessage": "Speed up your FIRE",
     "description": ""
+  },
+  "q5WJA/": {
+    "defaultMessage": "Share the Result",
+    "description": "sharing result modal text"
+  },
+  "sZHCkb": {
+    "defaultMessage": "Try this test 🙈",
+    "description": "Share this page"
   },
   "vKyplr": {
     "defaultMessage": "Your FIRE number 💰",

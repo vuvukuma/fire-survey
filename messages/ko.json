@@ -1,4 +1,8 @@
 {
+  "24Xwvp": {
+    "defaultMessage": "친구에게 테스트 보내기",
+    "description": "sharing test modal text"
+  },
   "3Wcqsy": {
     "defaultMessage": "다음",
     "description": "Next button"
@@ -42,6 +46,14 @@
   "eHDuqN": {
     "defaultMessage": "은퇴 시기 계산하기 ⏱",
     "description": "Intro page start button text"
+  },
+  "fTbIbq": {
+    "defaultMessage": "닫기",
+    "description": "modal closing button"
+  },
+  "q5WJA/": {
+    "defaultMessage": "결과 공유하기",
+    "description": "sharing result modal text"
   },
   "iXEv8P": {
     "defaultMessage": "친구에게 테스트 보내기 🙈",
