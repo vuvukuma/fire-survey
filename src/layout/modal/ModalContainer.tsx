@@ -14,7 +14,7 @@ export const ModalContainer: React.FC<ModalProps> = ({
             onClick={closeModal}
         >
             <div
-                className={`bg-white max-w-xl w-full p-5 my-6 mx-autorounded`}
+                className={`bg-white max-w-md w-full p-5 my-6 mx-autorounded`}
                 onClick={(e) => e.stopPropagation()}
             >
                 {children}

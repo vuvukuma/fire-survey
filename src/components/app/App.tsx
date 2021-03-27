@@ -64,13 +64,16 @@ const App = () => {
         return expense * 300
     }
 
+    function getSavingRate(): number {
+        return (income - expense) / income
+    }
+
     function getFireDate(): string {
         const fireNumber: number = getFireNumber()
         const difference: number = fireNumber - pfValue
-        const saving: number = income - expense
-        const savingRate: number = saving / income
+        
         const remainingMonths: number = Math.round(
-            difference / (income * savingRate)
+            difference / (income * getSavingRate())
         )
         const today: Date = new Date()
 
@@ -110,6 +113,7 @@ const App = () => {
                             <ResultPage
                                 fireDate={fireDate}
                                 fireNumber={fireNumber}
+                                savingRate={getSavingRate() * 100}
                                 updateResult={updateResult}
                             />
                         }

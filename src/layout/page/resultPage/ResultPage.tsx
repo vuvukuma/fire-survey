@@ -2,15 +2,18 @@ import React, { FunctionComponent, useEffect } from 'react'
 import { useLocation } from 'react-router'
 import { FormattedMessage } from 'react-intl'
 
-import Page from '../Page'
-import Button from '../../../components/button/Button'
-import SharingResultModal from '../../../layout/modal/sharingResultModal/SharingResultModal'
-import SharingTestModal from '../../../layout/modal/sharingTestModal/SharingTestModal'
-import { useModal } from '../../../hooks/UseModal'
+import Page from 'layout/page/Page'
+import Button from 'components/button/Button'
+import Slider from 'components/inputs/Slider'
+import SharingResultModal from 'layout/modal/sharingResultModal/SharingResultModal'
+import SharingTestModal from 'layout/modal/sharingTestModal/SharingTestModal'
+import { useModal } from 'hooks/UseModal'
+import { share } from 'util/Share'
 
 type ResultPageType = {
     fireNumber: number
     fireDate: string
+    savingRate: number
     updateResult: () => void
 }
 
@@ -32,6 +35,24 @@ const ResultPage: FunctionComponent<ResultPageType> = (props) => {
         closeModal: closeShareTestModal,
     } = useModal()
     usePageViews(props.updateResult)
+
+    function onClickShareResult() {
+        share(
+            {
+                text: 'test',
+            },
+            openShareResultModal
+        )
+    }
+
+    function onClickShareTest() {
+        share(
+            {
+                text: 'test',
+            },
+            openShareTestModal
+        )
+    }
 
     return (
         <>
@@ -71,11 +92,11 @@ const ResultPage: FunctionComponent<ResultPageType> = (props) => {
                         ></FormattedMessage>
                     </div>
                     <div className="py-8">
-                        <input className="w-full" type="range"></input>
+                        <Slider initialValue={props.savingRate}></Slider>
                     </div>
                 </div>
                 <div>
-                    <Button className="mb-4" onClick={openShareResultModal}>
+                    <Button className="mb-4" onClick={onClickShareResult}>
                         <FormattedMessage
                             defaultMessage="Share the result 🤑"
                             description="Share the result"
@@ -84,7 +105,7 @@ const ResultPage: FunctionComponent<ResultPageType> = (props) => {
                     <Button
                         textColor="white"
                         bgColor="purple-600"
-                        onClick={openShareTestModal}
+                        onClick={onClickShareTest}
                     >
                         <FormattedMessage
                             defaultMessage="Recommend it to friends 🙈"
