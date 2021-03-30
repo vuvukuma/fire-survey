@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Switch, Route, useLocation } from 'react-router-dom'
 import { useIntl } from 'react-intl'
 
@@ -15,6 +15,7 @@ const App = () => {
     const intl = useIntl()
     const [income, setIncome] = useState(10000)
     const [expense, setExpense] = useState(1000)
+    const [savingsRate, setSavingsRate] = useState(0)
     const [pfValue, setPfValue] = useState(100000)
     const [fireNumber, setFireNumber] = useState(0)
     const [fireDate, setFireDate] = useState(new Date().toLocaleString())
@@ -60,6 +61,11 @@ const App = () => {
 
     let location = useLocation()
 
+    useEffect(() => {
+        setFireNumber(getFireNumber())
+        setFireDate(getFireDate())
+    })
+
     function getFireNumber(): number {
         return expense * 300
     }
@@ -68,13 +74,29 @@ const App = () => {
         return (income - expense) / income
     }
 
-    function getFireDate(): string {
+    function getFireDate(newSavingRate?: number): string {
         const fireNumber: number = getFireNumber()
         const difference: number = fireNumber - pfValue
+        const savingRatio: number = newSavingRate || getSavingRate()
         
+        setSavingsRate(savingRatio)
+
+        if (savingRatio === 0) {
+            return (new Date(8640000000000000)).toLocaleDateString()
+        }
+
+        if (difference <= 0) {
+            return (new Date()).toLocaleDateString()
+        }
+
         const remainingMonths: number = Math.round(
-            difference / (income * getSavingRate())
+            difference / (income * savingRatio)
         )
+        
+        return calculateFireDate(remainingMonths)
+    }
+
+    function calculateFireDate(remainingMonths: number): string {
         const today: Date = new Date()
 
         today.setMonth(today.getMonth() + remainingMonths)
@@ -85,6 +107,14 @@ const App = () => {
     function updateResult(): void {
         setFireNumber(getFireNumber())
         setFireDate(getFireDate())
+    }
+
+    function updateResultFromSavingsRate(newSavingRate: number): void {
+        const updatedSaving: number = income * newSavingRate
+        const updatedExpense: number = income - updatedSaving
+
+        setExpense(updatedExpense)
+        setSavingsRate(newSavingRate)
     }
 
     function handleChangeIncome(e: React.FormEvent<HTMLInputElement>): void {
@@ -115,6 +145,7 @@ const App = () => {
                                 fireNumber={fireNumber}
                                 savingRate={getSavingRate() * 100}
                                 updateResult={updateResult}
+                                updateResultFromSavingsRate={updateResultFromSavingsRate}
                             />
                         }
                     />

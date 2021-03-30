@@ -11,6 +11,10 @@
     "defaultMessage": "당신의 예상 퇴사일은 ⏱",
     "description": "Result page heading FIRE time"
   },
+  "9AjpZB": {
+    "defaultMessage": "클립보드로 주소 복사하기",
+    "description": "copy test url button"
+  },
   "9JVqHH": {
     "defaultMessage": "매월 저축 비율을 늘려보세요 💸",
     "description": ""
@@ -51,10 +55,6 @@
     "defaultMessage": "닫기",
     "description": "modal closing button"
   },
-  "q5WJA/": {
-    "defaultMessage": "결과 공유하기",
-    "description": "sharing result modal text"
-  },
   "iXEv8P": {
     "defaultMessage": "친구에게 테스트 보내기 🙈",
     "description": "Share this page"
@@ -62,6 +62,14 @@
   "mCa6Fa": {
     "defaultMessage": "더 빠른 은퇴를 원하신다면,",
     "description": ""
+  },
+  "q5WJA/": {
+    "defaultMessage": "결과 공유하기",
+    "description": "sharing result modal text"
+  },
+  "sZHCkb": {
+    "defaultMessage": "친구에게 테스트 보내기 🙈",
+    "description": "Share this page"
   },
   "vKyplr": {
     "defaultMessage": "당신이 모아야 할 돈은 💰",

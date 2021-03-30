@@ -15,6 +15,7 @@ type ResultPageType = {
     fireDate: string
     savingRate: number
     updateResult: () => void
+    updateResultFromSavingsRate: (savingRate: number)=>void
 }
 
 function usePageViews(cb: () => void) {
@@ -34,6 +35,7 @@ const ResultPage: FunctionComponent<ResultPageType> = (props) => {
         openModal: openShareTestModal,
         closeModal: closeShareTestModal,
     } = useModal()
+
     usePageViews(props.updateResult)
 
     function onClickShareResult() {
@@ -52,6 +54,10 @@ const ResultPage: FunctionComponent<ResultPageType> = (props) => {
             },
             openShareTestModal
         )
+    }
+
+    function handleRangeChange(newValue: number): void {
+        props.updateResultFromSavingsRate(newValue)
     }
 
     return (
@@ -92,7 +98,7 @@ const ResultPage: FunctionComponent<ResultPageType> = (props) => {
                         ></FormattedMessage>
                     </div>
                     <div className="py-8">
-                        <Slider initialValue={props.savingRate}></Slider>
+                        <Slider initialValue={props.savingRate} handleRangeChange={handleRangeChange}></Slider>
                     </div>
                 </div>
                 <div>

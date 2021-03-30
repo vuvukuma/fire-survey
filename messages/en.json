@@ -11,6 +11,10 @@
     "defaultMessage": "You can retire in ⏱",
     "description": "Result page heading FIRE time"
   },
+  "9AjpZB": {
+    "defaultMessage": "Copy URL to clipboard",
+    "description": "copy test url button"
+  },
   "9JVqHH": {
     "defaultMessage": "by boosting savings rate 💸",
     "description": ""
@@ -64,7 +68,7 @@
     "description": "sharing result modal text"
   },
   "sZHCkb": {
-    "defaultMessage": "Try this test 🙈",
+    "defaultMessage": "Share this test 🙈",
     "description": "Share this page"
   },
   "vKyplr": {
