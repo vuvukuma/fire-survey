@@ -9,13 +9,12 @@ import SharingResultModal from 'layout/modal/sharingResultModal/SharingResultMod
 import SharingTestModal from 'layout/modal/sharingTestModal/SharingTestModal'
 import { useModal } from 'hooks/UseModal'
 import { share } from 'util/Share'
+import { useFireState } from 'hooks/UseFireState'
 
 type ResultPageType = {
     fireNumber: number
     fireDate: string
     savingRate: number
-    updateResult: () => void
-    updateResultFromSavingsRate: (savingRate: number)=>void
 }
 
 function usePageViews(cb: () => void) {
@@ -30,13 +29,19 @@ const ResultPage: FunctionComponent<ResultPageType> = (props) => {
         openModal: openShareResultModal,
         closeModal: closeShareResultModal,
     } = useModal()
+    
     const {
         isModalOpen: isShareTestModalOpen,
         openModal: openShareTestModal,
         closeModal: closeShareTestModal,
     } = useModal()
 
-    usePageViews(props.updateResult)
+    const {
+        updateResult,
+        updateResultFromSavingsRate
+    } = useFireState()
+
+    usePageViews(updateResult)
 
     function onClickShareResult() {
         share(
@@ -57,7 +62,7 @@ const ResultPage: FunctionComponent<ResultPageType> = (props) => {
     }
 
     function handleRangeChange(newValue: number): void {
-        props.updateResultFromSavingsRate(newValue)
+        updateResultFromSavingsRate(newValue)
     }
 
     return (
